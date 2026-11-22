@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+/* GL FLOORS palette: navy + gold on warm cream and white. */
+@theme {
+  --font-sans: var(--font-prompt), ui-sans-serif, system-ui, sans-serif;
+
+  --color-navy: #0f1e3a;
+  --color-navy-light: #1b2f55;
+  --color-navy-deep: #0a1529;
+  --color-gold: #d99a2b;
+  --color-gold-light: #e6ae4a;
+  /* darker gold for text on light backgrounds (readable contrast) */
+  --color-gold-ink: #8f5f0d;
+  /* gold for large display accents on light backgrounds (3:1+ on cream) */
+  --color-gold-deep: #a86f10;
+  --color-cream: #faf6ee;
+  --color-cream-deep: #efe7d8;
+  --color-line: #e6ddcc;
+  --color-linegreen: #06c755;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-line);
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: #ffffff;
+    color: var(--color-navy);
+    font-family: var(--font-sans);
+    /* Thai has tall vowel and tone marks, so it needs more room between lines than Latin. */
+    line-height: 1.75;
+  }
+  h1,
+  h2,
+  h3 {
+    line-height: 1.35;
+    text-wrap: balance;
+  }
+  :lang(en) h1,
+  :lang(en) h2 {
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+  }
+  :lang(en) body {
+    line-height: 1.6;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+  }
+  .section {
+    @apply py-16 sm:py-24;
+  }
+  /* Small spaced capitals above a section title. Thai has no capitals and does not take wide tracking. */
+  .eyebrow {
+    @apply flex items-center gap-3 text-xs font-medium tracking-[0.32em] text-gold-ink uppercase;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply h-px w-10 bg-gold;
+  }
+  :lang(th) .eyebrow {
+    @apply text-sm tracking-[0.06em];
+  }
+  .display-1 {
+    @apply text-[2.6rem] font-light sm:text-[3.25rem] lg:text-[4rem] xl:text-[4.75rem];
+  }
+  .display-2 {
+    @apply text-[1.9rem] font-light sm:text-4xl lg:text-[2.85rem];
+  }
+  :lang(en) .display-1 {
+    line-height: 1.02;
+  }
+
+  .btn {
+    @apply inline-flex min-h-13 items-center justify-center gap-3 rounded-sm px-7 whitespace-nowrap text-base font-medium transition duration-200 focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:outline-none;
+  }
+  .btn-navy {
+    @apply bg-navy text-white hover:bg-navy-light;
+  }
+  .btn-gold {
+    @apply bg-gold text-navy hover:bg-gold-light;
+  }
+  .btn-outline {
+    @apply border border-navy/25 text-navy hover:border-navy hover:bg-navy/[0.03];
+  }
+  .btn-outline-light {
+    @apply border border-white/30 text-white hover:border-white hover:bg-white/5;
+  }
+}
+
+/* Film grain over dark sections, so flat navy reads like a material, not a fill. */
+.grain {
+  position: relative;
+  isolation: isolate;
+}
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.16;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Scroll reveal: content fades up once, the first time it enters the viewport. */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Portfolio marquee: the list is rendered twice and the track slides left by half its width,
+   so the loop is seamless (spacing is a margin on each photo, so both halves are exactly equal). */
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+.marquee {
+  animation: marquee 80s linear infinite;
+  will-change: transform;
+}
+
+/* Hero entrance: pure CSS, so it plays before hydration and never hides content from crawlers. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+.rise {
+  animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise,
+  .marquee {
+    animation: none;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

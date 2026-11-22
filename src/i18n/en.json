@@ -1,0 +1,142 @@
+{
+    "meta": {
+        "title": "Stamped Concrete Floors in Chiang Mai, from 500 THB/m² | GL FLOORS"
+    },
+    "header": {
+        "home": "GL FLOORS home",
+        "language": "Choose language",
+        "line": "LINE"
+    },
+    "hero": {
+        "title": "Stamped concrete\nfloors in\n*Chiang Mai*",
+        "subtitle": "Durable. Slip-resistant. Done on time.",
+        "ctaLine": "Send photo + m² on LINE",
+        "ctaCall": "Call 089-519-9892",
+        "imageAlt": "Grey stamped concrete driveway in front of a modern house"
+    },
+    "usps": {
+        "title": "Why GL FLOORS",
+        "items": [
+            "Built to last",
+            "Slip-resistant, no puddles",
+            "Work guaranteed",
+            "Fast and on schedule",
+            "Free site measurement"
+        ]
+    },
+    "pricing": {
+        "eyebrow": "Pricing",
+        "title": "Price per square metre",
+        "badge": "From 500 THB/m²",
+        "thickness": "",
+        "cm": "cm",
+        "unit": "THB/m²",
+        "uses": [
+            "Paths, terraces, around the house",
+            "Parking areas and carports",
+            "Driveways and heavier traffic"
+        ],
+        "note": "Final price depends on the site, the area and the pattern you choose. Send a photo on LINE for a free estimate.",
+        "thicknessLabel": "Thickness",
+        "perM2": "per square metre"
+    },
+    "portfolio": {
+        "eyebrow": "Portfolio",
+        "title": "Floors we have laid\nin *Chiang Mai*",
+        "imageAlt": "Stamped concrete project in Chiang Mai",
+        "beforeAfterTitle": "The same carport",
+        "before": "Before",
+        "after": "After",
+        "sliderLabel": "Drag to compare before and after",
+        "beforeAfterEyebrow": "Before / after",
+        "beforeAfterText": "Before and after its stamped concrete floor. Drag the line to compare.",
+        "open": "View larger",
+        "close": "Close",
+        "prev": "Previous",
+        "next": "Next"
+    },
+    "steps": {
+        "eyebrow": "How it works",
+        "title": "Three steps\nto a new floor",
+        "items": [
+            {
+                "title": "Send a photo + m² on LINE",
+                "body": "Snap the area and give us a rough size. We reply with a first estimate."
+            },
+            {
+                "title": "Free site measurement",
+                "body": "We visit, look at the site and measure it properly. No charge."
+            },
+            {
+                "title": "We get to work",
+                "body": "Confirm the price and start date, and our team builds it on schedule."
+            }
+        ]
+    },
+    "faq": {
+        "eyebrow": "FAQ",
+        "title": "Common\nquestions",
+        "items": [
+            {
+                "q": "How long does it take?",
+                "a": "It depends on the size and the site. We give you a clear timeline before we start and finish on the agreed date."
+            },
+            {
+                "q": "Is it slippery when wet?",
+                "a": "The stamped surface has texture, so it grips better than smooth concrete. We also slope it so water drains away instead of pooling."
+            },
+            {
+                "q": "Is the work guaranteed?",
+                "a": "Yes. The details and terms are in your quote before work begins."
+            },
+            {
+                "q": "Which thickness do I need?",
+                "a": "It depends on use. Walkways can be thinner; areas where cars drive or park need more. We'll advise once we've seen a photo or the site."
+            }
+        ]
+    },
+    "cta": {
+        "title": "What would\nyour floor cost?",
+        "body": "Send a photo and the size in m² on LINE for a free estimate.",
+        "or": "or call",
+        "eyebrow": "Free estimate"
+    },
+    "footer": {
+        "tagline": "Good Life · Chiang Mai",
+        "line": "LINE",
+        "phone": "Phone",
+        "facebook": "Facebook",
+        "rights": "All rights reserved",
+        "contact": "Contact"
+    },
+    "floating": {
+        "label": "Send a photo on LINE"
+    },
+    "nav": {
+        "pricing": "Pricing",
+        "work": "Work",
+        "how": "How it works",
+        "faq": "FAQ",
+        "patterns": "Patterns"
+    },
+    "patterns": {
+        "eyebrow": "Patterns & colours",
+        "title": "Pick a *pattern*\nand a *colour*",
+        "text": "Examples from our own projects. Tap a pattern and a colour, then mention it when you send your photo on LINE.",
+        "patternLabel": "Pattern",
+        "colorLabel": "Colour",
+        "patterns": [
+            "Natural stone",
+            "Slate slab",
+            "Cobblestone"
+        ],
+        "colors": [
+            "Charcoal",
+            "Light grey",
+            "Terracotta",
+            "Amber brown"
+        ],
+        "choice": "Tell us on LINE:",
+        "send": "Send your choice on LINE"
+    }
+}
